@@ -1,0 +1,15 @@
+POST https://localhost:5001/api/jogo/cadastrar
+Content-Type: application/json
+
+{
+  "selecaoA": {
+    "id": 1
+  },
+  "selecaoB": {
+    "id": 2
+  }
+}
+
+###
+GET https://localhost:5001/api/jogo/listar
+
