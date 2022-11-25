@@ -1,5 +1,5 @@
 export interface Selecao {
   id?: number;
-  nome: string;
+  nome?: string;
   criadoEm?: string;
 }
