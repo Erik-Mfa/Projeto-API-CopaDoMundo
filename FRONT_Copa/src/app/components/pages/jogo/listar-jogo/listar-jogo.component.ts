@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { Jogo } from "src/app/models/jogo.model";
 
 @Component({
   selector: "app-listar-jogo",
@@ -7,7 +9,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./listar-jogo.component.css"],
 })
 export class ListarJogoComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  jogos!: Jogo[]; 
 
-  ngOnInit(): void {}
+  constructor(private http: HttpClient,
+      private router: Router) {}
+
+  ngOnInit(): void {
+    this.http.get<Jogo[]>("https://localhost:5001/api/jogo/listar").subscribe({
+      next: (jogo) => {
+        this.jogos = jogo;
+      }
+    });
+  }
 }
