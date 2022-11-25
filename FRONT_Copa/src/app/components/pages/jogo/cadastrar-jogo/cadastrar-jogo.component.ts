@@ -31,18 +31,6 @@ export class CadastrarJogoComponent implements OnInit {
     });
   }
 
-    valorSelect1 = "";
-    valorSelect2 = "";
-    onChange1(valor: any) {
-      console.log(valor);
-      this.valorSelect1 = valor;
-    }
-
-    onChange2(valor: any) {
-      console.log(valor);
-      this.valorSelect2 = valor;
-    }
-
   cadastrar(): void {
     let jogo: Jogo = {
       selecaoA: this.selecoes?.find(s => s.id == this.selecao1),
